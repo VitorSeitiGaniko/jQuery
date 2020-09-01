@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        //usando um seletor, no caso selecionando "divs"
+        //Essa função esconde os elementos e no caso dps de 5seg
+        //Depois ele volta a mostrar os elementos
+        $('div').hide(5000).show(5000).fadeOut(5000)
+
+        //Criando um plugin personalizado
+        $.fn.fundoPersonalizado = function(){
+            this.css('background-color', 'green')
+            return this
+        }
+
+        $('body').fundoPersonalizado().fadeOut(4000)
+    </script>
+</body>
